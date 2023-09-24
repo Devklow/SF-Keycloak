@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="{{ asset('asset/bootstrap5/css/bootstrap.css') }}" rel="stylesheet"/>
+            <link href="{{ asset('asset/fontawesome/css/all.css') }}" rel="stylesheet"/>
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="{{ asset('asset/bootstrap5/js/bootstrap.bundle.js') }}"></script>
+            <script src="{{ asset('asset/fontawesome/js/all.js') }}"></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block sidebar %}{{ include('fragments/sidebar.html.twig') }}{% endblock %}
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>
