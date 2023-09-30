@@ -11,11 +11,20 @@
         {% block javascripts %}
             <script src="{{ asset('asset/bootstrap5/js/bootstrap.bundle.js') }}"></script>
             <script src="{{ asset('asset/fontawesome/js/all.js') }}"></script>
+            <script src="{{ asset('asset/app.js') }}" defer="defer"></script>
+            <script src="{{ asset('asset/navbar.js') }}" defer="defer"></script>
         {% endblock %}
     </head>
     <body>
-        {% block sidebar %}{{ include('fragments/sidebar.html.twig') }}{% endblock %}
-        {% block body %}
+        {% block sidebar %}
+            {{ include('fragments/sidebar.html.twig') }}
         {% endblock %}
+        <div class="d-flex container-fluid">
+            <div class="col-auto col-md-3 col-xl-2 min-vh-100"></div>
+            <div class="ml-0 p-0 d-flex container-fluid align-content-around">
+            {% block body %}
+            {% endblock %}
+            </div>
+        </div>
     </body>
 </html>
