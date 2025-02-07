@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
-            <link href="{{ asset('asset/bootstrap5/css/bootstrap.css') }}" rel="stylesheet"/>
-            <link href="{{ asset('asset/fontawesome/css/all.css') }}" rel="stylesheet"/>
-        {% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <title>{{ app_title }} - {% block title %}{% endblock %}</title>
+    <link rel="icon" href="{{ asset('images/d20-white.svg') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('library/Fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('library/Bootstrap/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('library/AdminLTE/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('library/Select2/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/select2-fix.css') }}">
 
-        {% block javascripts %}
-            <script src="{{ asset('asset/bootstrap5/js/bootstrap.bundle.js') }}"></script>
-            <script src="{{ asset('asset/fontawesome/js/all.js') }}"></script>
-            <script src="{{ asset('asset/app.js') }}" defer="defer"></script>
-            <script src="{{ asset('asset/navbar.js') }}" defer="defer"></script>
-        {% endblock %}
-    </head>
-    <body>
-        {% block sidebar %}
-            {{ include('fragments/sidebar.html.twig') }}
-        {% endblock %}
-        <div class="d-flex container-fluid">
-            <div class="col-auto col-md-3 col-xl-2 min-vh-100"></div>
-            <div class="ml-0 p-0 d-flex container-fluid align-content-around">
-            {% block body %}
-            {% endblock %}
+    {% block stylesheets %}
+    {% endblock %}
+</head>
+<body class="layout-fixed sidebar-mini" data-datatable-Language="{{ asset('library/DataTable/fr-FR.json') }}">
+{% block full_body %}
+<div class="wrapper">
+    {% block navbar %}
+        {{ include('fragments/main-header.html.twig') }}
+    {% endblock %}
+    {% block sidebar %}
+        {{ include('fragments/main-sidebar.html.twig') }}
+    {% endblock %}
+    <main class="content-wrapper">
+        <div class="container-fluid">
+            <div class="d-flex mb-4"></div>
+            <div>
+                {% block body %}
+                {% endblock %}
             </div>
+            <div class="d-flex mt-4"></div>
         </div>
-    </body>
+    </main>{{ include('fragments/main-footer.html.twig') }}
+</div>
+
+<script type="text/javascript" src="{{ asset('asset/js/config.js') }}"></script>
+<script type="text/javascript" src="{{ asset('library/jQuery/jquery-3.7.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('library/Fontawesome/js/all.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('library/Bootstrap/bootstrap.bundle.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('library/AdminLTE/adminlte.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('library/Select2/select2.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('asset/js/app.js') }}" defer="defer"></script>
+{% block javascripts %}
+{% endblock %}
+</body>
+{% endblock %}
 </html>

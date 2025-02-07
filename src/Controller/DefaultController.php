@@ -16,8 +16,8 @@ class DefaultController extends AbstractController
         ]);
     }
 
-    #[Route('/nothing', name: 'nothing')]
-    public function nothing(): Response
+    #[Route('/profile', name: 'profile')]
+    public function profile(): Response
     {
         return $this->render('default/index.html.twig', [
 
