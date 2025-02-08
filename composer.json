@@ -11,7 +11,9 @@
         "doctrine/doctrine-bundle": "^2.10",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.16",
+        "knpuniversity/oauth2-client-bundle": "^2.18",
         "sensio/framework-extra-bundle": "^6.2",
+        "stevenmaguire/oauth2-keycloak": "^5.1",
         "symfony/apache-pack": "^1.0",
         "symfony/asset": "6.0.*",
         "symfony/console": "6.0.*",
@@ -20,6 +22,7 @@
         "symfony/form": "6.0.*",
         "symfony/framework-bundle": "6.0.*",
         "symfony/runtime": "6.0.*",
+        "symfony/security-bundle": "6.0.*",
         "symfony/security-csrf": "6.0.*",
         "symfony/translation": "6.0.*",
         "symfony/twig-bundle": "6.0.*",
@@ -27,7 +30,9 @@
         "symfony/yaml": "6.0.*"
     },
     "require-dev": {
-        "symfony/maker-bundle": "^1.50"
+        "symfony/maker-bundle": "^1.50",
+        "symfony/stopwatch": "6.0.*",
+        "symfony/web-profiler-bundle": "6.0.*"
     },
     "config": {
         "allow-plugins": {
