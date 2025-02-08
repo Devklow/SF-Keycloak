@@ -48,3 +48,7 @@
 .sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active{
     background-color: #E75112!important;
 }
+
+.card-orange{
+    background-color: #E75112!important;
+}

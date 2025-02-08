@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon profil{% endblock %}
+
+{% block body %}
+    <h1 class="mb-5">Mon profil</h1>
+    <div class="card">
+        <div class="card-header card-orange"><i class="fa fa-user mr-2"></i>- Informations utilisateurs</div>
+        <div class="card-body">
+            <dl class="d-flex flex-wrap ">
+                <div class="col-sm-12 d-flex">
+                    <dt class="mr-2">Sub :</dt>
+                    <dd>{{ user.sub }}</dd>
+                </div>
+                <div class="col-sm-12 d-flex">
+                    <dt class="mr-2">Nom :</dt>
+                    <dd>{{ user.nom }}</dd>
+                </div>
+                <div class="col-sm-12 d-flex">
+                    <dt class="mr-2">Prénom :</dt>
+                    <dd>{{ user.prenom }}</dd>
+                </div>
+                <div class="col-sm-12 d-flex">
+                    <dt class="mr-2">Email :</dt>
+                    <dd>{{ user.email }}</dd>
+                </div>
+            </dl>
+            <h4>Roles</h4>
+            <ul>
+                {% for role in user.roles %}
+                    <li>{{ role }}</li>
+                {% else %}
+                    <p>Aucun rôle configuré pour l'utilisateur.</p>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="card-footer"></div>
+    </div>
+{% endblock %}

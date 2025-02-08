@@ -93,7 +93,7 @@ class KeycloakAuthenticator extends OAuth2Authenticator implements Authenticatio
         string $firewallName
     ): ?Response
     {
-        $targetUrl = $this->router->generate('profile');
+        $targetUrl = $this->router->generate('profil');
         return new RedirectResponse($targetUrl);
     }
 

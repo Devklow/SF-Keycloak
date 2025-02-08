@@ -7,6 +7,7 @@ use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class RoleService
@@ -20,7 +21,11 @@ class RoleService
 
     public function getRolesFromToken(ResourceOwnerInterface $userToken){
         $appli = $this->parameterBag->get('client_id');
-        $roles = $userToken->toArray()['resource_access'][$appli]['roles'];
+        if (array_key_exists($appli, $userToken->toArray()['resource_access'])){
+            $roles = $userToken->toArray()['resource_access'][$appli]['roles'];
+        } else {
+            $roles = [];
+        }
         return $roles;
     }
 
